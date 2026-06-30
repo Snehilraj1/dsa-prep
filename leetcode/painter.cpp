@@ -2,7 +2,7 @@
 using namespace std;
 
 int main(){
-    int arr[] = {3,2,2,4,1,4}; 
+    int arr[] = {30,11,23,4,20}; 
     int start = 4; 
     int size = 6; 
     int end = 16; // The true max sum is 140

@@ -4,12 +4,7 @@ int main(){
     int stalls[] = {1, 2, 4, 8, 9}; // 
     int cows = 3; //
     int start = 1; 
-    int size  = 5; //
-    int ans = 0;
-    // write a loop to get the max value in the array
-    int min = 1;
-    int max = 9; //
-    int end = (max-min);
+    int sort
 
     while(start<=end){
         int mid = start + (end - start)/2;
