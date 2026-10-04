@@ -9,14 +9,14 @@ void combination(string& digits, vector<string>& letters, int index, string& tem
     int index_number = int(digits[index] - '0'); 
 
     for (int i = 0; i<letters[index_number].size(); i++){
-        temp += letters[index_number][i]; 
+        temp.push_back(letters[index_number][i]); 
         combination(digits, letters, index+1, temp, ans); 
-        temp += letters[index_number][i];
+        temp.pop_back();
     }
 
 }
 int main() {
-    string digits = "23"; 
+    string digits = "2";  //
     vector<string>letters = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
     vector<string>ans; 
     string temp; 
