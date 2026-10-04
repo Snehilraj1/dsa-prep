@@ -4,7 +4,6 @@ using namespace std;
 
 void combinesum(vector<int>&nums, int target, int index,
      vector<int>& temp, vector<vector<int>>& ans){
-    vector<int>repetition;
     if (target==0){
         ans.push_back(temp); 
         return;
@@ -15,12 +14,13 @@ void combinesum(vector<int>&nums, int target, int index,
 
     for (int i = index; i<nums.size(); i++){
 
-        if (repetition.size() == 0 or repetition[repetition.size()-1]!=nums[i]){
-            repetition.push_back(nums[i]); 
-            temp.push_back(nums[i]); 
-            combinesum(nums, target - nums[i], i+1, temp, ans);
-            temp.pop_back();
+        if (i>index and nums[i] == nums[i-1]){
+            continue;
         }
+
+        temp.push_back(nums[i]);
+        combinesum(nums, target - nums[i], i + 1, temp, ans);
+        temp.pop_back();
 
     }
 
